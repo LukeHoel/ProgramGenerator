@@ -13,9 +13,16 @@ import { MuscleGroupChipComponent } from './components/exercise/muscle-group-chi
 import { MatSelectModule } from '@angular/material/select';
 import { DayComponent } from './components/day/day.component';
 import { PlanComponent } from './components/plan/plan.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
-  declarations: [AppComponent, ExerciseComponent, MuscleGroupChipComponent, DayComponent, PlanComponent],
+  declarations: [
+    AppComponent,
+    ExerciseComponent,
+    MuscleGroupChipComponent,
+    DayComponent,
+    PlanComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +30,7 @@ import { PlanComponent } from './components/plan/plan.component';
     MatCardModule,
     MatChipsModule,
     MatSelectModule,
+    DragDropModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

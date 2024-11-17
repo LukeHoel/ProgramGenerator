@@ -1,1 +1,9 @@
-<app-day *ngFor="let day of plan.days" [day]="day"></app-day>
+<div class="container">
+    <div cdkDropList *ngFor="let day of plan.days" [cdkDropListData]="day.plannedExercises"
+        [cdkDropListConnectedTo]="allDropLists?.toArray() || []" (cdkDropListDropped)="drop($event)">
+        @for (plannedExercise of day.plannedExercises; track plannedExercise) {
+        <app-exercise *ngFor="let plannedExercise of day.plannedExercises" [plannedExercise]="plannedExercise"
+            [readOnly]="true" cdkDrag></app-exercise>
+        }
+    </div>
+</div>

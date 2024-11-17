@@ -14,6 +14,14 @@ export class AppComponent {
     setCount: 2,
     progression: 'reps',
   };
-  day: Day = { plannedExercises: [this.plannedExercise] };
-  plan: any = { days: [this.day, this.day] };
+  plannedExercise2: PlannedExercise = {
+    name: 'Barbell Curls Lying Against An Incline',
+    setCount: 2,
+    progression: 'reps',
+  };
+  day: Day = {
+    plannedExercises: [this.plannedExercise2, this.plannedExercise],
+  };
+  day2: Day = { plannedExercises: [this.plannedExercise2] };
+  plan: any = { days: [this.day, this.day2] };
 }
