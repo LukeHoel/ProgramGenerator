@@ -1,8 +1,7 @@
 <p>exercise works!</p>
-<ng-container *ngIf="exercise" >
+<div *ngIf="exercise" [style.backgroundColor]="muscleGroupColors[exercise.primaryMuscles[0]]" class="container">
     <h2>{{exercise.name}}</h2>
     <div class="exercise">
-        <img src="exercises/{{exercise.name.replaceAll(' ', '_')}}/images/1.jpg" height="100">
         <div>
             <h3>Primary Muscles</h3>
             <ul>
@@ -13,5 +12,6 @@
                 <li *ngFor="let muscleGroup of exercise.secondaryMuscles">{{muscleGroup}}</li>
             </ul>
         </div>
+        <img src="exercises/{{exercise.name.replaceAll(' ', '_')}}/images/1.jpg" height="150">
     </div>
-</ng-container>
+</div>
