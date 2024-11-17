@@ -10,8 +10,17 @@ app-exercise {
     margin: 10px;
 }
 
-[mat-fab] {
+.fauxExercise {
     width: 400px;
     height: 170px;
     margin: 10px;
+}
+
+.header {
+    width: 100%;
+    margin: 10px
+}
+
+.header > * {
+        margin-right: 10px;
 }

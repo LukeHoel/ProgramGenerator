@@ -12,7 +12,7 @@ import { muscleGroupColors } from '../../helpers.ts/muscleGroupHelper';
 export class ExerciseComponent {
   muscleGroupColors = muscleGroupColors;
   exercises = exercises;
-  plannedExercise: any | PlannedExercise;
+  plannedExercise: PlannedExercise;
   exercise: any | Exercise;
   @Input('plannedExercise') set setupPlannedExercise(
     plannedExercise: PlannedExercise
@@ -27,4 +27,9 @@ export class ExerciseComponent {
   }
 
   @Input() readOnly: boolean;
+
+  editExercise() {
+    this.plannedExercise.name = 'Barbell Ab Rollout - On Knees';
+    this.setupPlannedExercise = this.plannedExercise;
+  }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Day, Plan, PlannedExercise } from './models/plan';
 import { PlanService } from './services/plan.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-root',
@@ -24,12 +25,24 @@ export class AppComponent {
     plannedExercises: [this.plannedExercise2, this.plannedExercise],
   };
   day2: Day = { plannedExercises: [this.plannedExercise2] };
+  selectedPlanKey: string;
   plan: any = { days: [this.day, this.day2] };
 
   plans: { [key: string]: Plan } = {};
 
+  planKeys: Array<string> = [];
+
   constructor(private planService: PlanService) {
     this.plans = planService.GetPlans();
-    this.plan = this.plans['default'];
+    this.planKeys = Object.keys(this.plans);
+    this.selectPlan(
+      localStorage.getItem('selectedPlanKey') || this.planKeys[0]
+    );
+  }
+
+  selectPlan(key: string): void {
+    this.selectedPlanKey = key;
+    this.plan = _.cloneDeep(this.plans[key]);
+    localStorage.setItem('selectedPlanKey', this.selectedPlanKey);
   }
 }

@@ -1,3 +1,13 @@
+<div class="header">
+    <mat-form-field>
+        <mat-label>Program Name</mat-label>
+        <input matInput standalone [(ngModel)]="name">
+    </mat-form-field>
+    <button mat-fab class="regular" (click)="savePlan()">
+        <mat-icon>save</mat-icon>
+    </button>
+</div>
+
 <div class="container">
     <div *ngFor="let day of plan.days">
         <div cdkDropList [cdkDropListData]="day.plannedExercises"
@@ -6,12 +16,12 @@
                 [readOnly]="plan.readOnly" cdkDrag></app-exercise>
         </div>
         <div class="lowerButtons">
-            <button mat-fab (click)="addPlannedExercise(day)">
+            <button mat-fab class="fauxExercise" (click)="addPlannedExercise(day)">
                 <mat-icon>add</mat-icon>
             </button>
         </div>
     </div>
-    <button mat-fab (click)="addDay()">
+    <button mat-fab (click)="addDay()" class="fauxExercise">
         <mat-icon>add</mat-icon>
     </button>
 

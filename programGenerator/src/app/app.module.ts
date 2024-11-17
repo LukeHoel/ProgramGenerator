@@ -16,6 +16,8 @@ import { PlanComponent } from './components/plan/plan.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { MatButtonModule } from '@angular/material/button';
     DragDropModule,
     MatIconModule,
     MatButtonModule,
+    MatInputModule,
+    MatListModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

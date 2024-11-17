@@ -15,4 +15,11 @@ export class PlanService {
 
     return parsed;
   }
+
+  SavePlan(name: string, plan: Plan): void {
+    const plans = this.GetPlans();
+    plans[name] = plan;
+    localStorage.setItem('plans', JSON.stringify(plans));
+    window.location.reload();
+  }
 }

@@ -1,4 +1,10 @@
-import { Component, Input, QueryList, ViewChildren } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { Day, Plan, PlannedExercise } from '../../models/plan';
 import {
   CdkDragDrop,
@@ -6,15 +12,20 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
+import { PlanService } from '../../services/plan.service';
 
 @Component({
   selector: 'app-plan',
   templateUrl: './plan.component.html',
   styleUrl: './plan.component.scss',
 })
-export class PlanComponent {
+export class PlanComponent implements OnInit {
   @ViewChildren(CdkDropList) allDropLists: QueryList<CdkDropList> | undefined;
+  @Input() name: string;
   @Input() plan: Plan;
+
+  constructor(private planService: PlanService) {}
+
   drop(event: CdkDragDrop<PlannedExercise[]>) {
     console.log(event);
     if (event.previousContainer === event.container) {
@@ -52,5 +63,16 @@ export class PlanComponent {
         plannedExercises: [],
       },
     ];
+  }
+
+  ngOnInit() {
+    setInterval(() => {
+      console.error(this.plan);
+    }, 1000);
+  }
+
+  savePlan() {
+    localStorage.setItem('selectedPlanKey', this.name);
+    this.planService.SavePlan(this.name, this.plan);
   }
 }

@@ -1,7 +1,6 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>{{exercise.name}}</mat-card-title>
-        <mat-card-subtitle>{{exercise.category}} - {{exercise.equipment}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <mat-select [ngModel]="plannedExercise.setCount" [disabled]="readOnly">
@@ -26,5 +25,8 @@
             <app-muscle-group-chip *ngFor="let muscleGroup of exercise.secondaryMuscles"
                 [muscleGroup]="muscleGroup"></app-muscle-group-chip>
         </mat-chip-set>
+        <button mat-icon-button (click)="editExercise()">
+            <mat-icon>edit</mat-icon>
+        </button>
     </mat-card-footer>
 </mat-card>

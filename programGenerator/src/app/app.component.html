@@ -1,2 +1,5 @@
+<mat-action-list>
+    <button mat-list-item *ngFor="let key of planKeys" (click)="selectPlan(key)">{{key}}</button>
+</mat-action-list>
 <!-- <app-day [day]="day"></app-day> -->
-<app-plan [plan]="plan"></app-plan>
+<app-plan [name]="selectedPlanKey" [plan]="plan"></app-plan>
