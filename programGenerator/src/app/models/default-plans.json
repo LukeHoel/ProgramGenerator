@@ -1,0 +1,20 @@
+{
+  "default": {
+    "days": [
+      {
+        "plannedExercises": [
+          {
+            "name": "Band Hip Adductions"
+          }
+        ]
+      },
+      {
+        "plannedExercises": [
+          {
+            "name": "Band Skull Crusher"
+          }
+        ]
+      }
+    ]
+  }
+}

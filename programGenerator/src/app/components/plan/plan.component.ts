@@ -1,5 +1,5 @@
 import { Component, Input, QueryList, ViewChildren } from '@angular/core';
-import { Plan, PlannedExercise } from '../../models/plan';
+import { Day, Plan, PlannedExercise } from '../../models/plan';
 import {
   CdkDragDrop,
   CdkDropList,
@@ -13,9 +13,10 @@ import {
   styleUrl: './plan.component.scss',
 })
 export class PlanComponent {
-  @ViewChildren(CdkDropList) allDropLists!: QueryList<CdkDropList>;
+  @ViewChildren(CdkDropList) allDropLists: QueryList<CdkDropList> | undefined;
   @Input() plan: Plan;
   drop(event: CdkDragDrop<PlannedExercise[]>) {
+    console.log(event);
     if (event.previousContainer === event.container) {
       moveItemInArray(
         event.container.data,
@@ -30,5 +31,26 @@ export class PlanComponent {
         event.currentIndex
       );
     }
+  }
+
+  addPlannedExercise(day: Day) {
+    day.plannedExercises = [
+      ...day.plannedExercises,
+      {
+        name: 'Barbell Bench Press - Medium Grip',
+        setCount: 2,
+        progression: 'reps',
+      },
+    ];
+    console.error(day.plannedExercises);
+  }
+
+  addDay() {
+    this.plan.days = [
+      ...this.plan.days,
+      {
+        plannedExercises: [],
+      },
+    ];
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Day, PlannedExercise } from './models/plan';
+import { Day, Plan, PlannedExercise } from './models/plan';
+import { PlanService } from './services/plan.service';
 
 @Component({
   selector: 'app-root',
@@ -24,4 +25,11 @@ export class AppComponent {
   };
   day2: Day = { plannedExercises: [this.plannedExercise2] };
   plan: any = { days: [this.day, this.day2] };
+
+  plans: { [key: string]: Plan } = {};
+
+  constructor(private planService: PlanService) {
+    this.plans = planService.GetPlans();
+    this.plan = this.plans['default'];
+  }
 }

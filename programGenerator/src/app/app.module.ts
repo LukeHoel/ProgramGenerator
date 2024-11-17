@@ -14,6 +14,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { DayComponent } from './components/day/day.component';
 import { PlanComponent } from './components/plan/plan.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatChipsModule,
     MatSelectModule,
     DragDropModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

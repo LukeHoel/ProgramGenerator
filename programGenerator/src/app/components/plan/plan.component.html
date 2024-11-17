@@ -1,9 +1,18 @@
 <div class="container">
-    <div cdkDropList *ngFor="let day of plan.days" [cdkDropListData]="day.plannedExercises"
-        [cdkDropListConnectedTo]="allDropLists?.toArray() || []" (cdkDropListDropped)="drop($event)">
-        @for (plannedExercise of day.plannedExercises; track plannedExercise) {
-        <app-exercise *ngFor="let plannedExercise of day.plannedExercises" [plannedExercise]="plannedExercise"
-            [readOnly]="true" cdkDrag></app-exercise>
-        }
+    <div *ngFor="let day of plan.days">
+        <div cdkDropList [cdkDropListData]="day.plannedExercises"
+            [cdkDropListConnectedTo]="allDropLists?.toArray() || []" (cdkDropListDropped)="drop($event)">
+            <app-exercise *ngFor="let plannedExercise of day.plannedExercises" [plannedExercise]="plannedExercise"
+                [readOnly]="plan.readOnly" cdkDrag></app-exercise>
+        </div>
+        <div class="lowerButtons">
+            <button mat-fab (click)="addPlannedExercise(day)">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
     </div>
+    <button mat-fab (click)="addDay()">
+        <mat-icon>add</mat-icon>
+    </button>
+
 </div>
