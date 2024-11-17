@@ -2,12 +2,38 @@
     display: flex;
 }
 
-h2, h3 {
-    margin-top: 0;
-}
 .container {
     display: block;
-    width: 500px;
-    height: 200px;
     padding: 10px;
+}
+
+ul {
+    margin: 0;
+}
+.muscleGroups {
+    display: flex;
+    > span {
+        width: 150px;
+    }
+}
+
+.card-footer {
+    padding: 16px;
+}
+mat-card-title {
+    color: var(--mat-card-subtitle-text-color);
+}
+mat-card-subtitle {
+    text-transform: capitalize;
+}
+
+mat-card {
+    width: 400px;
+}
+
+mat-card, mat-chip {
+    border-width: 2px;
+}
+app-muscle-group-chip {
+    margin-right: 5px;
 }

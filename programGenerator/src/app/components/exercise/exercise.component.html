@@ -1,17 +1,17 @@
-<p>exercise works!</p>
-<div *ngIf="exercise" [style.backgroundColor]="muscleGroupColors[exercise.primaryMuscles[0]]" class="container">
-    <h2>{{exercise.name}}</h2>
-    <div class="exercise">
-        <div>
-            <h3>Primary Muscles</h3>
-            <ul>
-                <li *ngFor="let muscleGroup of exercise.primaryMuscles">{{muscleGroup}}</li>
-            </ul>
-            <h3>Secondary Muscles</h3>
-            <ul>
-                <li *ngFor="let muscleGroup of exercise.secondaryMuscles">{{muscleGroup}}</li>
-            </ul>
-        </div>
-        <img src="exercises/{{exercise.name.replaceAll(' ', '_')}}/images/1.jpg" height="150">
-    </div>
-</div>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{exercise.name}}</mat-card-title>
+        <mat-card-subtitle>{{exercise.category}} - {{exercise.equipment}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <!-- <p>{{exercise.instructions}}</p> -->
+    </mat-card-content>
+    <mat-card-footer class="card-footer">
+        <mat-chip-set>
+            <app-muscle-group-chip *ngFor="let muscleGroup of exercise.primaryMuscles"
+                [muscleGroup]="muscleGroup"></app-muscle-group-chip>
+            <app-muscle-group-chip *ngFor="let muscleGroup of exercise.secondaryMuscles"
+                [muscleGroup]="muscleGroup"></app-muscle-group-chip>
+        </mat-chip-set>
+    </mat-card-footer>
+</mat-card>
