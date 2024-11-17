@@ -11,22 +11,9 @@ import * as _ from 'lodash';
 export class AppComponent {
   title = 'programGenerator';
   name = 'asdfasdfa';
-  plannedExercise: PlannedExercise = {
-    name: 'Barbell Bench Press - Medium Grip',
-    setCount: 2,
-    progression: 'reps',
-  };
-  plannedExercise2: PlannedExercise = {
-    name: 'Barbell Curls Lying Against An Incline',
-    setCount: 2,
-    progression: 'reps',
-  };
-  day: Day = {
-    plannedExercises: [this.plannedExercise2, this.plannedExercise],
-  };
-  day2: Day = { plannedExercises: [this.plannedExercise2] };
+
   selectedPlanKey: string;
-  plan: any = { days: [this.day, this.day2] };
+  plan: Plan;
 
   plans: { [key: string]: Plan } = {};
 

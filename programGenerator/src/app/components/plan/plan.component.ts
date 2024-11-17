@@ -13,6 +13,12 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { PlanService } from '../../services/plan.service';
+import { EditPlannedExerciseDialogComponent } from '../exercise/edit-planned-exercise-dialog/edit-planned-exercise-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import {
+  dayIndexesFromDayCount,
+  dayNames,
+} from '../../helpers.ts/muscleGroupHelper';
 
 @Component({
   selector: 'app-plan',
@@ -24,8 +30,9 @@ export class PlanComponent implements OnInit {
   @Input() name: string;
   @Input() plan: Plan;
 
-  constructor(private planService: PlanService) {}
-
+  constructor(private planService: PlanService, private dialog: MatDialog) {}
+  dayIndexesFromDayCount = dayIndexesFromDayCount;
+  dayNames = dayNames;
   drop(event: CdkDragDrop<PlannedExercise[]>) {
     console.log(event);
     if (event.previousContainer === event.container) {
@@ -45,23 +52,42 @@ export class PlanComponent implements OnInit {
   }
 
   addPlannedExercise(day: Day) {
-    day.plannedExercises = [
-      ...day.plannedExercises,
-      {
-        name: 'Barbell Bench Press - Medium Grip',
-        setCount: 2,
-        progression: 'reps',
-      },
-    ];
+    const plannedExercise: PlannedExercise = {
+      name: '',
+      setCount: '3',
+      progression: 'reps',
+    };
+    const dialog = this.dialog.open(EditPlannedExerciseDialogComponent, {
+      data: plannedExercise,
+    });
+
+    dialog.afterClosed().subscribe((result) => {
+      if (plannedExercise.name) {
+        day.plannedExercises = [...day.plannedExercises, plannedExercise];
+      }
+    });
   }
 
   addDay() {
-    this.plan.days = [
-      ...this.plan.days,
-      {
-        plannedExercises: [],
-      },
-    ];
+    const plannedExercise: PlannedExercise = {
+      name: '',
+      setCount: '3',
+      progression: 'reps',
+    };
+    const dialog = this.dialog.open(EditPlannedExerciseDialogComponent, {
+      data: plannedExercise,
+    });
+
+    dialog.afterClosed().subscribe((result) => {
+      if (plannedExercise.name) {
+        this.plan.days = [
+          ...this.plan.days,
+          {
+            plannedExercises: [plannedExercise],
+          },
+        ];
+      }
+    });
   }
 
   ngOnInit() {}
@@ -69,6 +95,10 @@ export class PlanComponent implements OnInit {
   savePlan() {
     localStorage.setItem('selectedPlanKey', this.name);
     this.planService.SavePlan(this.name, this.plan);
+  }
+
+  deletePlan() {
+    this.planService.DeletePlan(this.name);
   }
 
   deletePlannedExercise(day: Day, exercise: PlannedExercise) {

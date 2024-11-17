@@ -22,6 +22,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  resize: vertical;
 }
 mat-card-title {
   color: var(--mat-card-subtitle-text-color);
@@ -51,4 +52,9 @@ mat-select {
   &:not(:last-child) {
     margin-right: 10px;
   }
+}
+
+mat-chip-set {
+  max-height: 100px;
+  overflow: auto;
 }

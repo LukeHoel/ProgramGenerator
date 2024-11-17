@@ -1,26 +1,27 @@
 [cdkDropList] {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .container {
-    display: flex;
+  display: flex;
 }
 
 app-exercise {
-    margin: 10px;
+  margin: 10px;
 }
 
 .fauxExercise {
-    width: 400px;
-    height: 170px;
-    margin: 10px;
+  width: 400px;
+  height: 170px;
+  margin: 10px;
+  background-color: #fafafa;
 }
 
 .header {
-    width: 100%;
-    margin: 10px
+  width: 100%;
+  margin: 10px;
 }
 
 .header > * {
-        margin-right: 10px;
+  margin-right: 10px;
 }

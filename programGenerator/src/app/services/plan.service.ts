@@ -22,4 +22,14 @@ export class PlanService {
     localStorage.setItem('plans', JSON.stringify(plans));
     window.location.reload();
   }
+
+  DeletePlan(name: string): void {
+    if (confirm(`Are you sure you want to delete ${name}?`)) {
+      const plans = this.GetPlans();
+      delete plans[name];
+      localStorage.setItem('plans', JSON.stringify(plans));
+      localStorage.removeItem('selectedPlanKey');
+      window.location.reload();
+    }
+  }
 }

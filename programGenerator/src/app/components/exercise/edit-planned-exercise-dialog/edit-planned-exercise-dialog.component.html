@@ -13,6 +13,26 @@
         </mat-autocomplete>
     </mat-form-field>
 
+    <mat-form-field>
+        <mat-label>Set Count</mat-label>
+        <mat-select [(ngModel)]="workingPlannedExercise.setCount" (ngModelChange)="dirty = true">
+            <mat-option value="1">1 Set</mat-option>
+            <mat-option value="2">2 Sets</mat-option>
+            <mat-option value="3">3 Sets</mat-option>
+            <mat-option value="4">4 Sets</mat-option>
+            <mat-option value="5">5 Sets</mat-option>
+            <mat-option value="-1">Ramp up to 5 Sets</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Progression</mat-label>
+        <mat-select [(ngModel)]="workingPlannedExercise.progression" (ngModelChange)="dirty = true">
+            <mat-option value="none">Do Not Progress</mat-option>
+            <mat-option value="reps">Progress Reps</mat-option>
+            <mat-option value="weight5lbs">Progress Weight (5 lbs)</mat-option>
+            <mat-option value="weight2.5lbs">Progress Weight (2.5 lbs)</mat-option>
+        </mat-select>
+    </mat-form-field>
 
 </mat-dialog-content>
 <mat-dialog-actions>

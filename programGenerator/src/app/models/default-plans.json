@@ -1,10 +1,35 @@
 {
-  "default": {
+  "Reddit PPL": {
     "days": [
       {
         "plannedExercises": [
           {
-            "name": "Band Hip Adductions"
+            "name": "Barbell Deadlift"
+          },
+          {
+            "name": "Wide-Grip Lat Pulldown",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Lying T-Bar Row",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Face Pull",
+            "setCount": "5",
+            "progression": "reps"
+          },
+          {
+            "name": "Hammer Curls",
+            "setCount": "4",
+            "progression": "reps"
+          },
+          {
+            "name": "Dumbbell Bicep Curl",
+            "setCount": "4",
+            "progression": "reps"
           }
         ]
       },
@@ -12,6 +37,162 @@
         "plannedExercises": [
           {
             "name": "Band Skull Crusher"
+          },
+          {
+            "name": "Barbell Bench Press - Medium Grip",
+            "setCount": "5",
+            "progression": "weight5lbs"
+          },
+          {
+            "name": "Standing Military Press",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Triceps Pushdown",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Side Lateral Raise",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Cable One Arm Tricep Extension",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Side Lateral Raise",
+            "setCount": "3",
+            "progression": "reps"
+          }
+        ]
+      },
+      {
+        "plannedExercises": [
+          {
+            "name": "Barbell Squat",
+            "setCount": "3",
+            "progression": "weight5lbs"
+          },
+          {
+            "name": "Romanian Deadlift",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Leg Press",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Lying Leg Curls",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Seated Calf Raise",
+            "setCount": "5",
+            "progression": "reps"
+          }
+        ]
+      },
+      {
+        "plannedExercises": [
+          {
+            "name": "Bent Over Barbell Row",
+            "setCount": "5",
+            "progression": "weight5lbs"
+          },
+          {
+            "name": "Close-Grip Front Lat Pulldown",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Lying T-Bar Row",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Face Pull",
+            "setCount": "5",
+            "progression": "reps"
+          },
+          {
+            "name": "Hammer Curls",
+            "setCount": "4",
+            "progression": "reps"
+          },
+          {
+            "name": "Dumbbell Bicep Curl",
+            "setCount": "4",
+            "progression": "reps"
+          }
+        ]
+      },
+      {
+        "plannedExercises": [
+          {
+            "name": "Standing Military Press",
+            "setCount": "3",
+            "progression": "weight2.5lbs"
+          },
+          {
+            "name": "Barbell Bench Press - Medium Grip",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Barbell Incline Bench Press - Medium Grip",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Triceps Pushdown",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Side Lateral Raise",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Triceps Overhead Extension with Rope",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Side Lateral Raise",
+            "setCount": "3",
+            "progression": "reps"
+          }
+        ]
+      },
+      {
+        "plannedExercises": [
+          {
+            "name": "Barbell Squat",
+            "setCount": "3",
+            "progression": "weight5lbs"
+          },
+          {
+            "name": "Romanian Deadlift",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Lying Leg Curls",
+            "setCount": "3",
+            "progression": "reps"
+          },
+          {
+            "name": "Seated Calf Raise",
+            "setCount": "5",
+            "progression": "reps"
           }
         ]
       }

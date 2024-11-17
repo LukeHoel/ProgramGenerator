@@ -36,6 +36,7 @@ export class ExerciseComponent {
   editPlannedExercise() {
     const dialog = this.dialog.open(EditPlannedExerciseDialogComponent, {
       data: this.plannedExercise,
+      autoFocus: false,
     });
 
     dialog.afterClosed().subscribe((result) => {

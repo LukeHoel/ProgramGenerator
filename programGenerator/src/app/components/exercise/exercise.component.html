@@ -1,22 +1,23 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>{{exercise.name}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <mat-select [(ngModel)]="plannedExercise.setCount" [disabled]="readOnly">
-            <mat-option value="1">1 Set</mat-option>
-            <mat-option value="2">2 Sets</mat-option>
-            <mat-option value="3">3 Sets</mat-option>
-            <mat-option value="4">4 Sets</mat-option>
-            <mat-option value="5">5 Sets</mat-option>
-            <mat-option value="-1">Ramp up to 5 Sets</mat-option>
-        </mat-select>
-        <mat-select [(ngModel)]="plannedExercise.progression" [disabled]="readOnly">
-            <mat-option value="none">Do Not Progress</mat-option>
+        <mat-card-subtitle *ngIf="plannedExercise.setCount == '-1'; else regular">Ramp Up To 5 Sets</mat-card-subtitle>
+        <ng-template #regular>
+            <mat-card-subtitle>{{plannedExercise.setCount}} Sets</mat-card-subtitle>
+        </ng-template>
+        <!-- <mat-option value="none">Do Not Progress</mat-option>
             <mat-option value="reps">Progress Reps</mat-option>
             <mat-option value="weight5lbs">Progress Weight (5 lbs)</mat-option>
-            <mat-option value="weight2.5lbs">Progress Weight (2.5 lbs)</mat-option>
-        </mat-select>
+            <mat-option value="weight2.5lbs">Progress Weight (2.5 lbs)</mat-option> -->
+        <mat-card-subtitle *ngIf="plannedExercise.progression == 'reps'">Progress Reps</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="plannedExercise.progression == 'weight5lbs'">Progress Weight (5
+            lbs)</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="plannedExercise.progression == 'weight2.5lbs'">Progress Weight (2.5
+            lbs)</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="plannedExercise.progression == 'none'">Do Not Progress</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
     </mat-card-content>
     <mat-card-footer class="card-footer">
         <mat-chip-set>
@@ -25,7 +26,7 @@
             <app-muscle-group-chip *ngFor="let muscleGroup of exercise.secondaryMuscles"
                 [muscleGroup]="muscleGroup"></app-muscle-group-chip>
         </mat-chip-set>
-        <button mat-icon-button [matMenuTriggerFor]="menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu" [disabled]="readOnly">
             <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">

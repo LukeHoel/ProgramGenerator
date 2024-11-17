@@ -9,6 +9,6 @@ export interface Day {
 
 export interface PlannedExercise {
   name: string;
-  setCount: number;
-  progression: 'reps' | 'weight5lbs' | 'weight2.5lbs';
+  setCount: string;
+  progression: 'reps' | 'weight5lbs' | 'weight2.5lbs' | 'none';
 }

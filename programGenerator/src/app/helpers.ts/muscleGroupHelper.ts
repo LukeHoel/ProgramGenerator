@@ -12,3 +12,21 @@ export const muscleGroupColors = {
   forearms: '#F9C846',
   abdominals: '#297373',
 };
+
+export const dayIndexesFromDayCount: { [dayCount: number]: Array<number> } = {
+  2: [0, 3],
+  3: [0, 2, 4],
+  4: [0, 1, 3, 4],
+  5: [0, 1, 2, 3, 4],
+  6: [0, 1, 2, 3, 4, 5],
+};
+
+export const dayNames = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
+];

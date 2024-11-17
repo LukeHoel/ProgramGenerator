@@ -3,13 +3,17 @@
         <mat-label>Program Name</mat-label>
         <input matInput standalone [(ngModel)]="name">
     </mat-form-field>
-    <button mat-fab class="regular" (click)="savePlan()">
+    <button mat-icon-button class="regular" (click)="savePlan()">
         <mat-icon>save</mat-icon>
+    </button>
+    <button mat-icon-button class="regular" (click)="deletePlan()">
+        <mat-icon>delete</mat-icon>
     </button>
 </div>
 
 <div class="container">
-    <div *ngFor="let day of plan.days">
+    <div *ngFor="let day of plan.days; index as i">
+        <h2 class="mat-display-small">{{ dayNames[dayIndexesFromDayCount[plan.days.length][i]] }}</h2>
         <div cdkDropList [cdkDropListData]="day.plannedExercises"
             [cdkDropListConnectedTo]="allDropLists?.toArray() || []" (cdkDropListDropped)="drop($event)">
             <app-exercise *ngFor="let plannedExercise of day.plannedExercises" [plannedExercise]="plannedExercise"
@@ -22,8 +26,12 @@
             </button>
         </div>
     </div>
-    <button mat-fab (click)="addDay()" class="fauxExercise">
-        <mat-icon>add</mat-icon>
-    </button>
+    <div>
+        <h2 class="mat-display-small">&nbsp;</h2>
+        <button mat-fab (click)="addDay()" class="fauxExercise">
+            <mat-icon>add</mat-icon>
+        </button>
+
+    </div>
 
 </div>
