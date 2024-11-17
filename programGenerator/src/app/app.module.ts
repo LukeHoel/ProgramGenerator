@@ -10,15 +10,19 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MuscleGroupChipComponent } from './components/exercise/muscle-group-chip/muscle-group-chip.component';
+import { MatSelectModule } from '@angular/material/select';
+import { DayComponent } from './components/day/day.component';
+import { PlanComponent } from './components/plan/plan.component';
 
 @NgModule({
-  declarations: [AppComponent, ExerciseComponent, MuscleGroupChipComponent],
+  declarations: [AppComponent, ExerciseComponent, MuscleGroupChipComponent, DayComponent, PlanComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatCardModule,
     MatChipsModule,
+    MatSelectModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

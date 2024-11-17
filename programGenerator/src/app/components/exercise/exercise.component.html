@@ -4,7 +4,20 @@
         <mat-card-subtitle>{{exercise.category}} - {{exercise.equipment}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <!-- <p>{{exercise.instructions}}</p> -->
+        <mat-select [ngModel]="plannedExercise.setCount" [disabled]="readOnly">
+            <mat-option value="1">1 Set</mat-option>
+            <mat-option value="2">2 Sets</mat-option>
+            <mat-option value="3">3 Sets</mat-option>
+            <mat-option value="4">4 Sets</mat-option>
+            <mat-option value="5">5 Sets</mat-option>
+            <mat-option value="-1">Ramp up to 5 Sets</mat-option>
+        </mat-select>
+        <mat-select [ngModel]="plannedExercise.progression" [disabled]="readOnly">
+            <mat-option value="none">Do Not Progress</mat-option>
+            <mat-option value="reps">Progress Reps</mat-option>
+            <mat-option value="weight5lbs">Progress Weight (5 lbs)</mat-option>
+            <mat-option value="weight2.5lbs">Progress Weight (2.5 lbs)</mat-option>
+        </mat-select>
     </mat-card-content>
     <mat-card-footer class="card-footer">
         <mat-chip-set>

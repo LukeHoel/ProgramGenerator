@@ -37,3 +37,14 @@ mat-card, mat-chip {
 app-muscle-group-chip {
     margin-right: 5px;
 }
+mat-select {
+    background-color: white;
+    padding: 8px;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 4px;
+    display: inline-block;
+    width: 155px;
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+}

@@ -25,4 +25,6 @@ export class ExerciseComponent {
       console.error(this.exercise);
     }
   }
+
+  @Input() readOnly: boolean;
 }
