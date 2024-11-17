@@ -19,6 +19,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { EditPlannedExerciseDialogComponent } from './components/exercise/edit-planned-exercise-dialog/edit-planned-exercise-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MuscleGroupChipComponent,
     DayComponent,
     PlanComponent,
+    EditPlannedExerciseDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatInputModule,
     MatListModule,
     MatMenuModule,
+    MatDialogModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

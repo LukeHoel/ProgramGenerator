@@ -3,6 +3,8 @@ import { PlannedExercise } from '../../models/plan';
 import { exercises } from '../../models/exercises.json';
 import { Exercise } from '../../models/exercises';
 import { muscleGroupColors } from '../../helpers.ts/muscleGroupHelper';
+import { MatDialog } from '@angular/material/dialog';
+import { EditPlannedExerciseDialogComponent } from './edit-planned-exercise-dialog/edit-planned-exercise-dialog.component';
 
 @Component({
   selector: 'app-exercise',
@@ -23,15 +25,21 @@ export class ExerciseComponent {
       this.exercise = this.exercises.find(
         (exercise) => exercise.name === this.plannedExercise.name
       );
-      console.error(this.exercise);
     }
   }
 
   @Input() readOnly: boolean;
   @Output() deletePlannedExercise = new EventEmitter<PlannedExercise>();
 
+  constructor(private dialog: MatDialog) {}
+
   editPlannedExercise() {
-    this.plannedExercise.name = 'Barbell Ab Rollout - On Knees';
-    this.setupPlannedExercise = this.plannedExercise;
+    const dialog = this.dialog.open(EditPlannedExerciseDialogComponent, {
+      data: this.plannedExercise,
+    });
+
+    dialog.afterClosed().subscribe((result) => {
+      this.setupPlannedExercise = this.plannedExercise;
+    });
   }
 }

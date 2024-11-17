@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Edit Planned Exercise</h2>
+<mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Exercise</mat-label>
+        <input matInput type="text" [matAutocomplete]="auto" #autoCompleteInput class="translucent"
+            [ngModel]="workingPlannedExercise.name" (focus)="autoCompleteInput.select()" />
+        <mat-autocomplete #auto="matAutocomplete"
+            (optionSelected)="workingPlannedExercise.name = $event.option.value; dirty = true">
+            <mat-option *ngFor="let exercise of filteredExercises(autoCompleteInput)" [value]="exercise.name">
+                <span>{{exercise.name}}</span> |
+                <small>Category: {{exercise.category}}</small>
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close [disabled]="!dirty" (click)="save()">Save</button>
+    <button mat-button mat-dialog-close (click)="cancel()">Close</button>
+</mat-dialog-actions>

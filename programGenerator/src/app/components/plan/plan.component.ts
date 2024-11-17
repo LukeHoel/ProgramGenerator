@@ -53,7 +53,6 @@ export class PlanComponent implements OnInit {
         progression: 'reps',
       },
     ];
-    console.error(day.plannedExercises);
   }
 
   addDay() {
@@ -65,11 +64,7 @@ export class PlanComponent implements OnInit {
     ];
   }
 
-  ngOnInit() {
-    setInterval(() => {
-      console.error(this.plan);
-    }, 1000);
-  }
+  ngOnInit() {}
 
   savePlan() {
     localStorage.setItem('selectedPlanKey', this.name);
