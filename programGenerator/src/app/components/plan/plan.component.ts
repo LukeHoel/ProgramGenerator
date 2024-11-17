@@ -75,4 +75,9 @@ export class PlanComponent implements OnInit {
     localStorage.setItem('selectedPlanKey', this.name);
     this.planService.SavePlan(this.name, this.plan);
   }
+
+  deletePlannedExercise(day: Day, exercise: PlannedExercise) {
+    const index = day.plannedExercises.indexOf(exercise);
+    day.plannedExercises.splice(index, 1);
+  }
 }

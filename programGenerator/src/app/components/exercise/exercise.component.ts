@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PlannedExercise } from '../../models/plan';
 import { exercises } from '../../models/exercises.json';
 import { Exercise } from '../../models/exercises';
@@ -14,6 +14,7 @@ export class ExerciseComponent {
   exercises = exercises;
   plannedExercise: PlannedExercise;
   exercise: any | Exercise;
+
   @Input('plannedExercise') set setupPlannedExercise(
     plannedExercise: PlannedExercise
   ) {
@@ -27,8 +28,9 @@ export class ExerciseComponent {
   }
 
   @Input() readOnly: boolean;
+  @Output() deletePlannedExercise = new EventEmitter<PlannedExercise>();
 
-  editExercise() {
+  editPlannedExercise() {
     this.plannedExercise.name = 'Barbell Ab Rollout - On Knees';
     this.setupPlannedExercise = this.plannedExercise;
   }

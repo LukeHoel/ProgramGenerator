@@ -1,53 +1,54 @@
 .exercise {
-    display: flex;
+  display: flex;
 }
 
 .container {
-    display: block;
-    padding: 10px;
+  display: block;
+  padding: 10px;
 }
 
 ul {
-    margin: 0;
+  margin: 0;
 }
 .muscleGroups {
-    display: flex;
-    > span {
-        width: 150px;
-    }
+  display: flex;
+  > span {
+    width: 150px;
+  }
 }
 
 .card-footer {
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 mat-card-title {
-    color: var(--mat-card-subtitle-text-color);
+  color: var(--mat-card-subtitle-text-color);
 }
 mat-card-subtitle {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 mat-card {
-    width: 400px;
+  width: 400px;
 }
 
-mat-card, mat-chip {
-    border-width: 2px;
+mat-card,
+mat-chip {
+  border-width: 2px;
 }
 app-muscle-group-chip {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 mat-select {
-    background-color: white;
-    padding: 8px;
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: 4px;
-    display: inline-block;
-    width: 155px;
-    &:not(:last-child) {
-        margin-right: 10px;
-    }
+  background-color: white;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  display: inline-block;
+  width: 155px;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
 }

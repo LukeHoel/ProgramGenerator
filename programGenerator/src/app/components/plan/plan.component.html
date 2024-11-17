@@ -13,7 +13,8 @@
         <div cdkDropList [cdkDropListData]="day.plannedExercises"
             [cdkDropListConnectedTo]="allDropLists?.toArray() || []" (cdkDropListDropped)="drop($event)">
             <app-exercise *ngFor="let plannedExercise of day.plannedExercises" [plannedExercise]="plannedExercise"
-                [readOnly]="plan.readOnly" cdkDrag></app-exercise>
+                [readOnly]="plan.readOnly" (deletePlannedExercise)="deletePlannedExercise(day, $event)"
+                cdkDrag></app-exercise>
         </div>
         <div class="lowerButtons">
             <button mat-fab class="fauxExercise" (click)="addPlannedExercise(day)">

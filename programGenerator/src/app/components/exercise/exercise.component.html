@@ -25,8 +25,12 @@
             <app-muscle-group-chip *ngFor="let muscleGroup of exercise.secondaryMuscles"
                 [muscleGroup]="muscleGroup"></app-muscle-group-chip>
         </mat-chip-set>
-        <button mat-icon-button (click)="editExercise()">
-            <mat-icon>edit</mat-icon>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
         </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="editPlannedExercise()">Edit</button>
+            <button mat-menu-item (click)="deletePlannedExercise.emit(plannedExercise)">Delete</button>
+        </mat-menu>
     </mat-card-footer>
 </mat-card>
